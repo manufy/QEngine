@@ -1,0 +1,619 @@
+
+
+Terminals which are not used:
+
+   ERROR_TOKEN
+
+
+State 41 contains 1 shift/reduce conflict.
+
+Grammar
+rule 1    program -> statement_list
+rule 2    statement_list -> statement_list statement
+rule 3    statement_list ->		/* empty */
+rule 4    statement -> END_STMT
+rule 5    statement -> expression END_STMT
+rule 6    statement -> PRINT expression END_STMT
+rule 7    statement -> INPUT identifier END_STMT
+rule 8    statement -> if_statement
+rule 9    statement -> compound_statement
+rule 10   statement -> error END_STMT
+rule 11   if_statement -> IF OPEN_PAR expression CLOSE_PAR statement optional_else_statement
+rule 12   optional_else_statement -> ELSE statement
+rule 13   optional_else_statement ->		/* empty */
+rule 14   compound_statement -> BEGIN_CS statement_list END_CS
+rule 15   expression -> equal_expression
+rule 16   equal_expression -> expression EQUAL assign_expression
+rule 17   equal_expression -> assign_expression
+rule 18   assign_expression -> identifier ASSIGN assign_expression
+rule 19   assign_expression -> concat_expression
+rule 20   concat_expression -> concat_expression CONCAT simple_expression
+rule 21   concat_expression -> simple_expression
+rule 22   simple_expression -> identifier
+rule 23   simple_expression -> string
+rule 24   simple_expression -> OPEN_PAR expression CLOSE_PAR
+rule 25   identifier -> ID
+rule 26   string -> STRING
+
+Terminals, with rules where they appear
+
+$ (-1)
+error (256) 10
+ERROR_TOKEN (258)
+IF (259) 11
+ELSE (260) 12
+PRINT (261) 6
+INPUT (262) 7
+ASSIGN (263) 18
+EQUAL (264) 16
+CONCAT (265) 20
+END_STMT (266) 4 5 6 7 10
+OPEN_PAR (267) 11 24
+CLOSE_PAR (268) 11 24
+BEGIN_CS (269) 14
+END_CS (270) 14
+ID (271) 25
+STRING (272) 26
+
+Nonterminals, with rules where they appear
+
+program (18)
+    on left: 1
+statement_list (19)
+    on left: 2 3, on right: 1 2 14
+statement (20)
+    on left: 4 5 6 7 8 9 10, on right: 2 11 12
+if_statement (21)
+    on left: 11, on right: 8
+optional_else_statement (22)
+    on left: 12 13, on right: 11
+compound_statement (23)
+    on left: 14, on right: 9
+expression (24)
+    on left: 15, on right: 5 6 11 16 24
+equal_expression (25)
+    on left: 16 17, on right: 15
+assign_expression (26)
+    on left: 18 19, on right: 16 17 18
+concat_expression (27)
+    on left: 20 21, on right: 19 20
+simple_expression (28)
+    on left: 22 23 24, on right: 20 21
+identifier (29)
+    on left: 25, on right: 7 18 22
+string (30)
+    on left: 26, on right: 23
+
+
+state 0
+
+    $default	reduce using rule 3 (statement_list)
+
+    program	go to state 45
+    statement_list	go to state 1
+
+
+
+state 1
+
+    program  ->  statement_list .   (rule 1)
+    statement_list  ->  statement_list . statement   (rule 2)
+
+    error	shift, and go to state 2
+    IF  	shift, and go to state 3
+    PRINT	shift, and go to state 4
+    INPUT	shift, and go to state 5
+    END_STMT	shift, and go to state 6
+    OPEN_PAR	shift, and go to state 7
+    BEGIN_CS	shift, and go to state 8
+    ID  	shift, and go to state 9
+    STRING	shift, and go to state 10
+
+    $   	reduce using rule 1 (program)
+
+    statement	go to state 11
+    if_statement	go to state 12
+    compound_statement	go to state 13
+    expression	go to state 14
+    equal_expression	go to state 15
+    assign_expression	go to state 16
+    concat_expression	go to state 17
+    simple_expression	go to state 18
+    identifier	go to state 19
+    string	go to state 20
+
+
+
+state 2
+
+    statement  ->  error . END_STMT   (rule 10)
+
+    END_STMT	shift, and go to state 21
+
+
+
+state 3
+
+    if_statement  ->  IF . OPEN_PAR expression CLOSE_PAR statement optional_else_statement   (rule 11)
+
+    OPEN_PAR	shift, and go to state 22
+
+
+
+state 4
+
+    statement  ->  PRINT . expression END_STMT   (rule 6)
+
+    OPEN_PAR	shift, and go to state 7
+    ID  	shift, and go to state 9
+    STRING	shift, and go to state 10
+
+    expression	go to state 23
+    equal_expression	go to state 15
+    assign_expression	go to state 16
+    concat_expression	go to state 17
+    simple_expression	go to state 18
+    identifier	go to state 19
+    string	go to state 20
+
+
+
+state 5
+
+    statement  ->  INPUT . identifier END_STMT   (rule 7)
+
+    ID  	shift, and go to state 9
+
+    identifier	go to state 24
+
+
+
+state 6
+
+    statement  ->  END_STMT .   (rule 4)
+
+    $default	reduce using rule 4 (statement)
+
+
+
+state 7
+
+    simple_expression  ->  OPEN_PAR . expression CLOSE_PAR   (rule 24)
+
+    OPEN_PAR	shift, and go to state 7
+    ID  	shift, and go to state 9
+    STRING	shift, and go to state 10
+
+    expression	go to state 25
+    equal_expression	go to state 15
+    assign_expression	go to state 16
+    concat_expression	go to state 17
+    simple_expression	go to state 18
+    identifier	go to state 19
+    string	go to state 20
+
+
+
+state 8
+
+    compound_statement  ->  BEGIN_CS . statement_list END_CS   (rule 14)
+
+    $default	reduce using rule 3 (statement_list)
+
+    statement_list	go to state 26
+
+
+
+state 9
+
+    identifier  ->  ID .   (rule 25)
+
+    $default	reduce using rule 25 (identifier)
+
+
+
+state 10
+
+    string  ->  STRING .   (rule 26)
+
+    $default	reduce using rule 26 (string)
+
+
+
+state 11
+
+    statement_list  ->  statement_list statement .   (rule 2)
+
+    $default	reduce using rule 2 (statement_list)
+
+
+
+state 12
+
+    statement  ->  if_statement .   (rule 8)
+
+    $default	reduce using rule 8 (statement)
+
+
+
+state 13
+
+    statement  ->  compound_statement .   (rule 9)
+
+    $default	reduce using rule 9 (statement)
+
+
+
+state 14
+
+    statement  ->  expression . END_STMT   (rule 5)
+    equal_expression  ->  expression . EQUAL assign_expression   (rule 16)
+
+    EQUAL	shift, and go to state 27
+    END_STMT	shift, and go to state 28
+
+
+
+state 15
+
+    expression  ->  equal_expression .   (rule 15)
+
+    $default	reduce using rule 15 (expression)
+
+
+
+state 16
+
+    equal_expression  ->  assign_expression .   (rule 17)
+
+    $default	reduce using rule 17 (equal_expression)
+
+
+
+state 17
+
+    assign_expression  ->  concat_expression .   (rule 19)
+    concat_expression  ->  concat_expression . CONCAT simple_expression   (rule 20)
+
+    CONCAT	shift, and go to state 29
+
+    $default	reduce using rule 19 (assign_expression)
+
+
+
+state 18
+
+    concat_expression  ->  simple_expression .   (rule 21)
+
+    $default	reduce using rule 21 (concat_expression)
+
+
+
+state 19
+
+    assign_expression  ->  identifier . ASSIGN assign_expression   (rule 18)
+    simple_expression  ->  identifier .   (rule 22)
+
+    ASSIGN	shift, and go to state 30
+
+    $default	reduce using rule 22 (simple_expression)
+
+
+
+state 20
+
+    simple_expression  ->  string .   (rule 23)
+
+    $default	reduce using rule 23 (simple_expression)
+
+
+
+state 21
+
+    statement  ->  error END_STMT .   (rule 10)
+
+    $default	reduce using rule 10 (statement)
+
+
+
+state 22
+
+    if_statement  ->  IF OPEN_PAR . expression CLOSE_PAR statement optional_else_statement   (rule 11)
+
+    OPEN_PAR	shift, and go to state 7
+    ID  	shift, and go to state 9
+    STRING	shift, and go to state 10
+
+    expression	go to state 31
+    equal_expression	go to state 15
+    assign_expression	go to state 16
+    concat_expression	go to state 17
+    simple_expression	go to state 18
+    identifier	go to state 19
+    string	go to state 20
+
+
+
+state 23
+
+    statement  ->  PRINT expression . END_STMT   (rule 6)
+    equal_expression  ->  expression . EQUAL assign_expression   (rule 16)
+
+    EQUAL	shift, and go to state 27
+    END_STMT	shift, and go to state 32
+
+
+
+state 24
+
+    statement  ->  INPUT identifier . END_STMT   (rule 7)
+
+    END_STMT	shift, and go to state 33
+
+
+
+state 25
+
+    equal_expression  ->  expression . EQUAL assign_expression   (rule 16)
+    simple_expression  ->  OPEN_PAR expression . CLOSE_PAR   (rule 24)
+
+    EQUAL	shift, and go to state 27
+    CLOSE_PAR	shift, and go to state 34
+
+
+
+state 26
+
+    statement_list  ->  statement_list . statement   (rule 2)
+    compound_statement  ->  BEGIN_CS statement_list . END_CS   (rule 14)
+
+    error	shift, and go to state 2
+    IF  	shift, and go to state 3
+    PRINT	shift, and go to state 4
+    INPUT	shift, and go to state 5
+    END_STMT	shift, and go to state 6
+    OPEN_PAR	shift, and go to state 7
+    BEGIN_CS	shift, and go to state 8
+    END_CS	shift, and go to state 35
+    ID  	shift, and go to state 9
+    STRING	shift, and go to state 10
+
+    statement	go to state 11
+    if_statement	go to state 12
+    compound_statement	go to state 13
+    expression	go to state 14
+    equal_expression	go to state 15
+    assign_expression	go to state 16
+    concat_expression	go to state 17
+    simple_expression	go to state 18
+    identifier	go to state 19
+    string	go to state 20
+
+
+
+state 27
+
+    equal_expression  ->  expression EQUAL . assign_expression   (rule 16)
+
+    OPEN_PAR	shift, and go to state 7
+    ID  	shift, and go to state 9
+    STRING	shift, and go to state 10
+
+    assign_expression	go to state 36
+    concat_expression	go to state 17
+    simple_expression	go to state 18
+    identifier	go to state 19
+    string	go to state 20
+
+
+
+state 28
+
+    statement  ->  expression END_STMT .   (rule 5)
+
+    $default	reduce using rule 5 (statement)
+
+
+
+state 29
+
+    concat_expression  ->  concat_expression CONCAT . simple_expression   (rule 20)
+
+    OPEN_PAR	shift, and go to state 7
+    ID  	shift, and go to state 9
+    STRING	shift, and go to state 10
+
+    simple_expression	go to state 37
+    identifier	go to state 38
+    string	go to state 20
+
+
+
+state 30
+
+    assign_expression  ->  identifier ASSIGN . assign_expression   (rule 18)
+
+    OPEN_PAR	shift, and go to state 7
+    ID  	shift, and go to state 9
+    STRING	shift, and go to state 10
+
+    assign_expression	go to state 39
+    concat_expression	go to state 17
+    simple_expression	go to state 18
+    identifier	go to state 19
+    string	go to state 20
+
+
+
+state 31
+
+    if_statement  ->  IF OPEN_PAR expression . CLOSE_PAR statement optional_else_statement   (rule 11)
+    equal_expression  ->  expression . EQUAL assign_expression   (rule 16)
+
+    EQUAL	shift, and go to state 27
+    CLOSE_PAR	shift, and go to state 40
+
+
+
+state 32
+
+    statement  ->  PRINT expression END_STMT .   (rule 6)
+
+    $default	reduce using rule 6 (statement)
+
+
+
+state 33
+
+    statement  ->  INPUT identifier END_STMT .   (rule 7)
+
+    $default	reduce using rule 7 (statement)
+
+
+
+state 34
+
+    simple_expression  ->  OPEN_PAR expression CLOSE_PAR .   (rule 24)
+
+    $default	reduce using rule 24 (simple_expression)
+
+
+
+state 35
+
+    compound_statement  ->  BEGIN_CS statement_list END_CS .   (rule 14)
+
+    $default	reduce using rule 14 (compound_statement)
+
+
+
+state 36
+
+    equal_expression  ->  expression EQUAL assign_expression .   (rule 16)
+
+    $default	reduce using rule 16 (equal_expression)
+
+
+
+state 37
+
+    concat_expression  ->  concat_expression CONCAT simple_expression .   (rule 20)
+
+    $default	reduce using rule 20 (concat_expression)
+
+
+
+state 38
+
+    simple_expression  ->  identifier .   (rule 22)
+
+    $default	reduce using rule 22 (simple_expression)
+
+
+
+state 39
+
+    assign_expression  ->  identifier ASSIGN assign_expression .   (rule 18)
+
+    $default	reduce using rule 18 (assign_expression)
+
+
+
+state 40
+
+    if_statement  ->  IF OPEN_PAR expression CLOSE_PAR . statement optional_else_statement   (rule 11)
+
+    error	shift, and go to state 2
+    IF  	shift, and go to state 3
+    PRINT	shift, and go to state 4
+    INPUT	shift, and go to state 5
+    END_STMT	shift, and go to state 6
+    OPEN_PAR	shift, and go to state 7
+    BEGIN_CS	shift, and go to state 8
+    ID  	shift, and go to state 9
+    STRING	shift, and go to state 10
+
+    statement	go to state 41
+    if_statement	go to state 12
+    compound_statement	go to state 13
+    expression	go to state 14
+    equal_expression	go to state 15
+    assign_expression	go to state 16
+    concat_expression	go to state 17
+    simple_expression	go to state 18
+    identifier	go to state 19
+    string	go to state 20
+
+
+
+state 41
+
+    if_statement  ->  IF OPEN_PAR expression CLOSE_PAR statement . optional_else_statement   (rule 11)
+
+    ELSE	shift, and go to state 42
+
+    ELSE	[reduce using rule 13 (optional_else_statement)]
+    $default	reduce using rule 13 (optional_else_statement)
+
+    optional_else_statement	go to state 43
+
+
+
+state 42
+
+    optional_else_statement  ->  ELSE . statement   (rule 12)
+
+    error	shift, and go to state 2
+    IF  	shift, and go to state 3
+    PRINT	shift, and go to state 4
+    INPUT	shift, and go to state 5
+    END_STMT	shift, and go to state 6
+    OPEN_PAR	shift, and go to state 7
+    BEGIN_CS	shift, and go to state 8
+    ID  	shift, and go to state 9
+    STRING	shift, and go to state 10
+
+    statement	go to state 44
+    if_statement	go to state 12
+    compound_statement	go to state 13
+    expression	go to state 14
+    equal_expression	go to state 15
+    assign_expression	go to state 16
+    concat_expression	go to state 17
+    simple_expression	go to state 18
+    identifier	go to state 19
+    string	go to state 20
+
+
+
+state 43
+
+    if_statement  ->  IF OPEN_PAR expression CLOSE_PAR statement optional_else_statement .   (rule 11)
+
+    $default	reduce using rule 11 (if_statement)
+
+
+
+state 44
+
+    optional_else_statement  ->  ELSE statement .   (rule 12)
+
+    $default	reduce using rule 12 (optional_else_statement)
+
+
+
+state 45
+
+    $   	go to state 46
+
+
+
+state 46
+
+    $   	go to state 47
+
+
+
+state 47
+
+    $default	accept

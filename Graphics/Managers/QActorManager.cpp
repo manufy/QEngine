@@ -1,0 +1,20 @@
+// QActorManager.cpp: implementation of the QActorManager class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "QActorManager.h"
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+QActorManager::QActorManager(int NumActors) : QHoleManager(NumActors)
+{
+	m_pActors = new QActor*[NumActors];
+}
+
+QActorManager::~QActorManager()
+{
+	delete [] m_pActors;
+}

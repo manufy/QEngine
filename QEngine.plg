@@ -1,0 +1,161 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: QEngine - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\manu\CONFIG~1\Temp\RSP24.bat" with contents
+[
+@echo off
+e:\Programacion\C\Lib\Flex\MISC\MSVC\bin\Release\flex -olex.cpp .\Scripting\string.l
+]
+Creating command line "C:\DOCUME~1\manu\CONFIG~1\Temp\RSP24.bat"
+Creating temporary file "C:\DOCUME~1\manu\CONFIG~1\Temp\RSP25.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/QEngine.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Programacion\C\Lib\QEngine\Shared\TDA\BitSet.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Math\Matrix4.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Objects\QActor.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Managers\QActorManager.cpp"
+"C:\Programacion\C\Lib\QEngine\App\QAppCore.cpp"
+"C:\Programacion\C\Lib\QEngine\App\QAppWin32.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Objects\QCamera.cpp"
+"C:\Programacion\C\Lib\QEngine\Input\QDirectInput.cpp"
+"C:\Programacion\C\Lib\QEngine\QEngine.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Objects\QFont.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Objects\QFontDirectX.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Managers\QFontManager.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Objects\QFontOpenGL.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Models\QFrame.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\TDA\QHoleManager.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\TDA\QHoleNode.cpp"
+"C:\Programacion\C\Lib\QEngine\Input\QInputDirectX.cpp"
+"C:\Programacion\C\Lib\QEngine\Input\QInputManager.cpp"
+"C:\Programacion\C\Lib\QEngine\Input\QInputWin32.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Objects\QInstance.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Managers\QInstanceManager.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Objects\QLog.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Models\QMesh.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Win32\QMFCApp.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Win32\QMFCDoc.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Win32\QMFCView.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Win32\QMFCViewDirectX.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Win32\QMFCViewOpenGL.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Models\QModel.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Models\QModelKeyframed.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Models\QModelMD2.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Models\QModelMD3.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Models\QModelMS3D.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Models\QModelRAW.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Particles\QParticle.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Particles\QParticleSystem.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Managers\QParticleSystemManager.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Models\QPrimitive.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Renderer\QRenderer.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Renderer\QRendererDirectX.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Renderer\QRendererOpenGL.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Textures\QTexture.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Textures\QTextureDirectX.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Managers\QTextureManager.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Textures\QTextureOpenGL.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Objects\QTimer.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Managers\QTimerManager.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Objects\QTriangle.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Models\QTriangleList.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Models\QTriangleListFan.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Models\QTriangleListStrip.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Managers\QTriangleManager.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Math\Quaternion.cpp"
+"C:\Programacion\C\Lib\QEngine\Graphics\Managers\QVertexManager.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Win32\QWindowWin32.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Win32\QWindowWin32DirectX.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Win32\QWindowWin32OpenGL.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Math\Vector2.cpp"
+"C:\Programacion\C\Lib\QEngine\Shared\Math\Vector3.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\manu\CONFIG~1\Temp\RSP25.tmp" 
+Creating temporary file "C:\DOCUME~1\manu\CONFIG~1\Temp\RSP26.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/QEngine.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"C:\Programacion\C\Lib\QEngine\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\manu\CONFIG~1\Temp\RSP26.tmp" 
+Generando lexer... (flex -olex.cpp string.l)
+El sistema no puede hallar la ruta especificada.
+Error executing c:\windows\system32\cmd.exe.
+<h3>Output Window</h3>
+Creating temporary file "C:\DOCUME~1\manu\CONFIG~1\Temp\RSP27.tmp" with contents
+[
+/nologo /o"Debug/QEngine.bsc" 
+.\Debug\StdAfx.sbr
+.\Debug\BitSet.sbr
+.\Debug\Matrix4.sbr
+.\Debug\QActor.sbr
+.\Debug\QActorManager.sbr
+.\Debug\QAppCore.sbr
+.\Debug\QAppWin32.sbr
+.\Debug\QCamera.sbr
+.\Debug\QDirectInput.sbr
+.\Debug\QEngine.sbr
+.\Debug\QFont.sbr
+.\Debug\QFontDirectX.sbr
+.\Debug\QFontManager.sbr
+.\Debug\QFontOpenGL.sbr
+.\Debug\QFrame.sbr
+.\Debug\QHoleManager.sbr
+.\Debug\QHoleNode.sbr
+.\Debug\QInputDirectX.sbr
+.\Debug\QInputManager.sbr
+.\Debug\QInputWin32.sbr
+.\Debug\QInstance.sbr
+.\Debug\QInstanceManager.sbr
+.\Debug\QLog.sbr
+.\Debug\QMesh.sbr
+.\Debug\QMFCApp.sbr
+.\Debug\QMFCDoc.sbr
+.\Debug\QMFCView.sbr
+.\Debug\QMFCViewDirectX.sbr
+.\Debug\QMFCViewOpenGL.sbr
+.\Debug\QModel.sbr
+.\Debug\QModelKeyframed.sbr
+.\Debug\QModelMD2.sbr
+.\Debug\QModelMD3.sbr
+.\Debug\QModelMS3D.sbr
+.\Debug\QModelRAW.sbr
+.\Debug\QParticle.sbr
+.\Debug\QParticleSystem.sbr
+.\Debug\QParticleSystemManager.sbr
+.\Debug\QPrimitive.sbr
+.\Debug\QRenderer.sbr
+.\Debug\QRendererDirectX.sbr
+.\Debug\QRendererOpenGL.sbr
+.\Debug\QTexture.sbr
+.\Debug\QTextureDirectX.sbr
+.\Debug\QTextureManager.sbr
+.\Debug\QTextureOpenGL.sbr
+.\Debug\QTimer.sbr
+.\Debug\QTimerManager.sbr
+.\Debug\QTriangle.sbr
+.\Debug\QTriangleList.sbr
+.\Debug\QTriangleListFan.sbr
+.\Debug\QTriangleListStrip.sbr
+.\Debug\QTriangleManager.sbr
+.\Debug\Quaternion.sbr
+.\Debug\QVertexManager.sbr
+.\Debug\QWindowWin32.sbr
+.\Debug\QWindowWin32DirectX.sbr
+.\Debug\QWindowWin32OpenGL.sbr
+.\Debug\Vector2.sbr
+.\Debug\Vector3.sbr]
+Creating command line "bscmake.exe @C:\DOCUME~1\manu\CONFIG~1\Temp\RSP27.tmp"
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+QEngine.lib - 1 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
